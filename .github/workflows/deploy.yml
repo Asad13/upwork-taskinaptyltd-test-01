@@ -31,7 +31,9 @@ jobs:
         run: pnpm install
 
       - name: Build Project
-        run: pnpm run build
+        run: |
+          VITE_APP_BASE_PATH="/upwork-taskinaptyltd-test-01/" \
+          pnpm run build
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
