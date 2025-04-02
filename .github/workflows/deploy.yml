@@ -27,9 +27,6 @@ jobs:
           node-version: 22.13.1
           cache: 'pnpm'
 
-      - name: Install Husky hooks
-        run: pnpm exec husky install
-
       - name: Install Dependencies
         run: pnpm install
 
