@@ -1,0 +1,65 @@
+{
+  "name": "test-01",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Test 01",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Asad13/upwork-taskinaptyltd-test-01.git"
+  },
+  "author": {
+    "name": "Asad Mujumder",
+    "email": "asaduzzaman.anik.me@gmail.com",
+    "url": "https://asad13.github.io"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext ts,tsx --fix",
+    "lint:css": "stylelint 'src/**/*.css'",
+    "lint:css:fix": "stylelint 'src/**/*.css' --fix",
+    "format": "prettier --write .",
+    "preview": "vite preview",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --cache --fix",
+    "*.css": "stylelint --fix",
+    "*.{js,jsx,ts,tsx,json,md,mdx,css,yml,yaml}": "prettier --write"
+  },
+  "browserslist": [
+    ">0.3%, last 2 versions, Firefox ESR, not dead and fully supports es6-module",
+    "maintained node versions"
+  ],
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=10"
+  },
+  "keywords": [
+    "test01"
+  ],
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/node": "^22.13.16",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "prettier": "^3.5.3",
+    "stylelint": "^16.17.0",
+    "stylelint-config-standard": "^37.0.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.2.0"
+  }
+}

@@ -1,0 +1,41 @@
+name: Deploy upwork-taskinaptyltd-test-01
+
+on:
+  push:
+    branches:
+      - main # Change if your branch name is different
+
+permissions:
+  contents: write # Allow GitHub Actions to push to gh-pages
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.7.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.13.1
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Build Project
+        run: pnpm run build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages # Deployment branch
+          folder: dist # Vite build output directory
+          clean: true # Ensure old files are removed
